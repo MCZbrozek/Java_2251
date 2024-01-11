@@ -1,0 +1,19 @@
+
+Our goal is to create an object-oriented, multi-threaded solution to reading in a set of data from file and sorting it by date.
+
+
+CHECKPOINTS:
+
+Begin with 
+	StringSplit.java
+	ReadIntegersExerciseSolution.java
+Integrate these files together to read in and split the csv data and display it.
+
+Create a DateValue.java class to hold the data from each row of the file and display it with a toString method. Read in the data into an array of DateValues.
+
+Make DateValue implement Comparable and test this out so that the array of objects can be sorted.
+
+Write a QuicksortThread class that sorts the given array and spawns new threads for further sorting of sub-arrays in a divide and conquer fashion. Only use references to the original array, no copying.
+	TestThread.java
+	ThreadDemo.java
+	Sorter.java

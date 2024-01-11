@@ -1,0 +1,6 @@
+
+This is a no-GUI version of the book's server example, 
+modified to demonstrate sending and receiving non-String data,
+further modified so that multiple different peices of data are received in sequence with an acknowledgement in between.
+
+This is an example of a finite state machine on both the client and server end!

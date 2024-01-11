@@ -1,0 +1,6 @@
+
+The idea is that students use this as a starting place from which to complete the networking assignment.
+
+This is found under
+Assignments -> Simple Example of File Read using GUI
+on Brightspace

@@ -1,0 +1,301 @@
+Create Diep.io
+I started off with a copy of GameTopDown.
+
+DONE-Create brick spawning.
+DONE-camera follows player
+DONE-Boundaries to stay within.
+DONE-refine brick respawn to stay in boundaries.
+DONE-Make the SpriteTopDown have an impulse-based push out.
+DONE-make shooting have recoil
+DONE-Gain xp from killing the bricks.
+	DONE-add an xp attribute in player
+	DONE-when brick takes damage and dies it adds xp to shooter
+	DONE-board shows an xp meter that rises
+	DONE-xp per level schedule added to new constants class
+DONE-Attributes to level up.
+	DONE-select a set of attributes to level up
+	DONE-create level attributes in player
+	DONE-create a schedule of values for the attributes in constants
+	DONE-add a little interface of buttons to level up different attributes
+		DONE-Bars whose width shows current level.
+		DONE-Plus sign object images to click on to spend points on corresponding attribute
+DONE-Prepopulate world with bricks
+DONE-make enemies move ballistically with high friction and have impulse-based push out
+DONE-Enemies that target bricks or player and can run away.
+DONE-make players and enemies push the blocks away too.
+DONE-debug enemy targeting randomly. There is a TODO still in enemy. This makes no sense, but it is fixed for now.
+DONE-Enemies can level up
+DONE-Make player and Enemy extend same Ship object
+DONE-Enemies run away temporarily after being shot using recoil shots
+DONE-debug enemy's sensing of environment
+DONE-make getting shot by a bullet push an individual back.
+DONE-taking damage from collisions with experience bricks
+DONE-multiple enemies that will attack each other
+DONE-upgrading health
+DONE-gain exp for body slamming experience bricks to death
+DONE-upgrading health regen
+DONE-upgrading collision damage
+DONE-killing enemies removes them from the game
+DONE-killing the player loses the game
+DONE-debug bullets moving through enemies
+DONE-a little delay between damage taking from the same target so that running into experience bricks feels more impactful.
+DONE-Make sure bullets are moving ballistically so they can be deflected.
+DONE-upgrading bullet penetration. SHould be as easy as health upgrade to bullets.
+DONE-turning on and off autofire with the E key.
+DONE-Add display of NPC names
+DONE-Add an observer camera that can flick between different enemies to observe
+DONE-Debug display of boundaries based on whomever camera is focused on, not necessarilly the player.
+DONE-Add a leaderboard display.
+DONE-Sort leaderboard ranking by points ascending. Use bubblesort.
+DONE-Toggle display of leaderboard and of upgrades with r and t keys.
+DONE-modify level up interface to display for any ship? How hard is this?
+DONE-Experience gain from destroying ships based on ship's experience level.
+DONE-Color code the dead on the leaderboard.
+DONE-Change takeDamage to take a SpriteTopDown damage_source. Deal with experience allocation there.
+DONE-Debug getting experience from kills. It looks like what order the collision happens in affects whether or not the xp is awarded. Make stationary low health enemies with decent level to test it out.
+DONE-Make enemy extend takeDamage instead of separate shotBy method.
+DONE-revamp bitmask system. I think you only need bitmasks for ships, bricks, bullets
+DONE-Clean up SpriteTopDown's collision handling method.
+DONE-Change experience bricks to not damage each other.
+DONE-do at least a little bit of balancing by testing out maxed stats in each category.
+DONE-Save a draft00
+DONE-custom colors for the enemies
+DONE-Save a draft01
+DONE-organized important constants into Constants.java
+DONE-increase default speed and friction
+DONE-Check the "stay in bounds" impulse to make sure it's strong enough at max speed.
+DONE-randomly relocate XP bricks when they die to keep their number constant
+DONE-Make them actual squares. with diversity of color and health.
+DONE-More upgrade levels.
+DONE-Save a draft02
+DONE-Redid Enemy AI with 5 different strategies.
+DONE-Save a draft03
+DONE-camera now skips dead players.
+DONE-Write a Constants function to load experience bricks.
+DONE-experience brick drawing deleted to be handled by spritetopdown.
+DONE-Different spritetopdown shapes.
+DONE-Seeker suicide bricks.
+DONE-Save a draft04
+DONE-Refine enemy personalities and strategies.
+DONE-game modes:
+	DONE - current mode - but set up with its own function
+	DONE - Preston mode - tons of no-collision-damage big bricks in a smaller arena
+	DONE - Survival mode - create an intangible object that tracks the number of living enemies and suicide bricks and when they are all dead, spawns a stronger wave of them after a short delay. Set the enemies to be terminator bots that seek and destroy only the player.
+DONE-new powers ups
+	DONE - no friction
+	DONE - super shove out
+DONE-Save a draft07
+DONE-new powerup: Goliath: big size, regen way up, speed down
+DONE-new powerup: Bait mimic - looks like experience brick. no health bar, no direction indicator
+DONE-new powerup: exploding bullets
+DONE-new powers up: Blackhole gravity with boosted collision damage and health reset to 100%
+DONE-Parameterized explosions in Constants.java
+DONE-Change Bomberman game mode to have bullets explode that can cause self damage, then try to ricochet shots to hit other players.
+DONE-Save a draft08
+DONE-Gradually shrinking arena size in the FFA.
+DONE-Powerup: big fuck-off bullets.
+DONE-How to make rammer a viable build? Try it with base body damage of 3.
+DONE-Ship Diversity: Machine Gun Ship: draw - to draw big wide-gun ship
+DONE-Ship Diversity: Machine Gun Ship: modify Ship.setAttributes to change refire rate and penetration and noise if the ship has a machine gun shape.
+DONE-Make the machine gun ship an upgrade.
+DONE-Save a draft09
+DONE-NPC's should seek powerups.
+DONE-Ship Diversity: Flanker Ship: fires forward and back, no recoil, front and back guns, 
+DONE-Ship Diversity: Sniper Ship: long lived, fast, penetrating, high damage, slow refire, narrow long barrel
+DONE-shift camera ahead in the direction facing when using the sniper
+DONE-Check enemy levelup only when it gains experience. Make sure the player does this too.
+DONE-Make fewer rammer AIs
+DONE-Make NPCs choose ship levelups, randomly for now. Write a new function and use it near line 95 in Enemy.
+DONE-Save a draft10
+DONE-Ship Diversity: Rammer Ship: looks spiky, speed up, can't shoot, 
+DONE-Make NPCs choose ship levelups, non-randomly: shooters choose the machine gun flanker or sniper, rammers choose the rammer.
+DONE-Modified rammer behavior to make likelihood to attack scale smoothly with level.
+DONE-Put levelup options in the LevelUpInterface in a list instead of each individually.
+DONE-Save a draft11
+DONE-teleport off map powerup
+DONE-brick stragavanza powerup that spawns non-respawning low-health bricks nearby to you.
+DONE-Added a boolean array in ship to tell whether or not a powerup is on in addition to the cooldown array of doubles. This is safer than previous method.
+DONE-Save draft12
+DONE-Debugging: have NPCs print their current behavior and modularize their behaviors a bit better. Also draw a line between each NPC and their current target.
+DONE-There is a weird farming oscillation that makes the ship stuck sometimes. I have observed ships shooting an empty spot in the world endlessly. What was there? Dead player? I'm thinking that the over complicated xp brick seeking code in SpriteTopDown is to blame. I have seen the oscillation when it is present, but not when it is replaced by the simpler version. Latest theory: it's a brick stravaganza brick that does not respawn. YES. The non-respawning bricks can get saved in the nearest_xp variable of a ship and never leave that variable because of a quirk in SpriteTopDown's nearest brick seeking code that tells a ship to obsessively finish off damaged bricks that are nearby. I added a check to see if the brick's health is above 0 as well and if not, reset the nearest brick.
+DONE-Ship Diversity: Twin Shot Ship: fires two offset forward shots, double barreled, double the recoil, secondary cooldown on the other barrel with some random noise in the cooldown
+DONE-Save draft13
+DONE-Ship Diversity: Cross-shot Ship: fires 4 directions, upgrade of flanker, 4 guns, 
+DONE-Ship Diversity: All-direction-shot Ship: guns in all directions, upgrade of cross shot, 
+DONE-Ship Diversity: Cloaked Rammer Ship: cloaks 3 seconds after it stops moving, 
+DONE-Ship Diversity: Exploder Ship: no body damage, shooting turns into explosive blast centered on ship.
+DONE-Save draft14
+DONE-Explosions need to not give powerups to the shooter.
+DONE-Explosions need to visually show blast radius. Don't use the image, use some expanding circles. Delete the image.
+DONE-Exploder ship image should be normal circle with a red then white outline around it. What if exploder ship is really tiny and has an extended refire rate and retards regen cooldown of ships that get hit. Then it's all about positioning and getting near other ships to blast them. What if the ship is the size, shape, and color of a bullet? The downside is that it would be hard to hit and possibly overpowered for that reason.
+DONE-Ship Diversity: Gravity Well Ship: very slow, body damage is instakill, drags everything in towards it, 
+DONE-Save draft15
+DONE-Ship Diversity: Ultimate sniper fires huge bullets
+DONE-backspace button resets ship to original. Change made in Player.java
+DONE-create introduction mode to show off ships and powerups
+DONE-Create a seeker object. For now make it similar to a bullet, but with the movement code of a suicidal seeker brick. Until it acquires a target, it beams out a line looking for a target. It can still expire. Eliminate anything from the linear collision list that is on the wrong side. That is, if seeker is travelling to the left (dx<0) then eliminate anything with a centerX to the right and vice versa.
+DONE-Ship Diversity: Ultimate sniper alternative fires seeker missiles. These things beam out a line until the line intersects a target then they seek that target until they die or time out.
+DONE-Ship Diversity: Mimic ship that is upgrade of rammer. Keeps the speed bonus, always looks like a blue brick, periodically at random cloaks itself from NPC automated detection.
+DONE-Ship Diversity: Carrier Ship (spawns seekers): big hexagonal ship, spawns seekers. Player seekers attack the cursor. NPC seekers attack the target. Just need a modified copy of the shooter behavior function that sends the seekers to the location of that object until it is dead.
+DONE-New object that just keeps track of the mouse's XY. Then go to the TODO in Ship.java and make player's carrier's seekers attack the cursor location.
+DONE-Only 1 suicide brick in the FFA.
+DONE-only 1 powerup in the FFA
+DONE-Implement upgrade scheme in which a tech tree must be followed:
+Rammer
+	-> mimic
+			-> cloaker
+	-> exploder
+			-> gravity well
+Flanker
+	-> cross shot
+			-> all direction shot
+Twin Shot
+	-> Sniper
+			-> Seekers
+			-> Cannon
+Machine Gun
+	-> Carrier
+DONE-Save draft16
+DONE-Nerf cannon sniper's fire rate and ship speed a little. I think it is overpowered.
+DONE-Improve Goliath and Blackhole powerup. Are there other crap powerups that could be better? I want to be excited to see a powerup.
+DONE-Save draft17
+DONE-rearrange the ordering of ship shapes and corresponding code in levelupinterface to make it easier to see the tech tree in the code. Should look like the above tech tree in this document.
+DONE-Make the NPC's level up all the way through the tech tree. Need a function that returns available ship level ups.
+DONE-Modify NPC_Random to be able to demo to students.
+DONE-Save draft18
+DONE-shove out impulse reduced from 10 to 8 in SpriteTopDown (effectively buffing rammers)
+DONE-gun recoil halved from 40 to 20 in Constants.py
+DONE-bullet default longevity greatly buffed
+DONE-increased size of all xp bricks. Decreased health of lowest xp brick.
+DONE-increased size of initial player ship
+DONE-increased size of ship types and bullets
+DONE-slow down arena shrink, but make arena eventually get even smaller
+DONE-nerfed size of cannon shot
+DONE-Powerups no longer respawn on their own.
+DONE-Powerups and suicide bricks are still obnoxious. Don't let them self-respawn. Make the FFA manager manage them. Make the powerups more rare.
+DONE-buffed xp gain for killing enemy ships
+DONE-alternate cloaker called creeper has normal speed but can move slowly while cloaked.
+DONE-mimic has burst speed only. no extra speed. implement as stamina.
+DONE-Save draft19
+DONE-Ship Diversity: cloaker as upgrade of creeper has burst speed only and gains body damage from bullet damage upgrades. no extra speed. implement as stamina.
+DONE-nerfed bullet speed
+DONE-Boundaries are drawn strangely with the sniper's camera and with gravity ship.
+DONE-Save draft20
+DONE-life system. 3 lives each? Upon death, spawn in random new location off the map. Lose some xp. Set back to full health. Set back to no upgrades and circle shape. (Can level up high using gravity ship or all direction then die and focus into a carrier or whatever.) Gain temporary invulnerability upon return to the game.
+DONE-test the lives and display them on the screen.
+DONE-buffed rammer health 10%, made exploder an upgrade of gravity ship, removed teleport away and mimic as powerups from FFA mode.
+DONE-Added a laser ship as upgrade of sniper.
+DONE-Fixed bugs preventing ships from leveling up again after dieing.
+DONE-Fixed bug where used up powerups aren't removed from nearest powerup.
+DONE-Test that NPC's regain upgrades after they die. There was a problem here. Revamp the upgrading entirely.
+DONE-Ship Diversity: Ricochet rammer. The ship itself has no friction and bounces off everything.
+DONE-Save draft22
+DONE-Ship Diversity: Ricochet bullet ship where the bullets bounce off of everything dealing more damage with each subsequent bounce.
+DONE-Add laser and both ricochet ships as possible upgrades of the random ship.
+DONE-write custom AI in NPC_HoltShooterC for carriers and ricochet shot.
+DONE-write custom AI in NPC_HoltRamD for ricochet rammer... in fact, a randomized rammer.
+DONE-write custom AI in NPC_HoltShooterD for all snipers.
+DONE-Save draft23
+DONE-Changes made at school
+DONE-Save draft24
+DONE-Changes made at school
+DONE-Save draft25
+DONE-Two Diep Game Modes: Billiards and Soccer:
+Diep: Unkillable ballistic bouncy bricks. No friction. Shepherd the bricks into a basket for points.
+1. Bounce off the edges.
+pushy_walls added in BoardTopDown
+Added bounceInBounds and pushInBounds in SpriteTopDown
+2. Modifications to bricks:
+	No friction.
+	Take no damage.
+friction argument added to brick creation functions in Constants.java
+Added setupBilliardsMode in BoardTopDown
+Added brick_vulnerability to Constants.java
+Added invincibility in experience brick.
+Changes made in SpriteTopDown.java so that invincible bricks no longer damage ships.
+3. Brick basket class: When it collides with a brick it removes that brick and increases the points of associated player or players by 1.
+Added BrickBasket class
+Create two teams
+4. AI: find brick nearest to basket. Seek position on far side of brick from basket. Shoot brick until brick is gone. Repeat.
+DONE-Diep soccer - multiplayer. Only need to pass in locations of all players and the ball. Two teams of 5 and a ball. Two goals.
+DONE-Greatly improved soccer AI
+DONE-Save draft26
+DONE-In Billiards game mode: No points for killing enemy. Regenerating lives. No points lost for dieing. Put powerups back in. Instead of leveling collision damage, shove impulse is leveled.
+DONE-Game modes can be selected from command prompt.
+
+TODO LEFT OFF HERE - do a fun addition next?
+
+-EASY overload NPC_Personality fleeShoot, attackShoot, ramShoot methods to not have to pass in the extra String
+
+-TIDY consolidate similarities between GameTopDown and Diep into GameMinimal? Some files in their src folders have identical names.
+
+-SHARE put on github and googledrive and make a youtube video sharing it.
+
+-Put the ship upgrades back in order. Just the last few are out of order. What is this? Is it in Constants.java? Ship.java?
+
+-do enemies re-upgrade correctly after a respawn?
+
+-rebalance to make exploder and gravity available earlier? or make further upgrade potential?
+
+
+
+If you're not channeling this energy...
+https://www.youtube.com/watch?v=ldwoiMHiyL8
+...why aren't you channeling this energy?
+
+
+
+-Diep Game Mode: one big brick in center and chip off pieces.
+Big brick class:
+Image is a many-pointed shape.
+Collision detection is handled differently. Anything greater than greatest radius distance away is ignored. Anything less, get the angle to that object and compare its distance to the radius of points heading in the same direction.
+Collision response is handled differently. When a collision occurs, find the angle from center to the collision. Get the radius in the most similar direction and reduce it. Then spawn a fragment headed in a direction randomized around the angle of the out-bound radius.
+
+-Ship Diversity: Ship that fires smaller exploding shots.
+
+-Ship Diversity: Wild card ship is upgrade of machine gunner. Random fraction of bullets have various combinations of: no damage, big, small, slow, fast, seek, dumb, etc. Or, the original idea was to have some bullets do no damage, but shove and then they shove the target away from the shooter until the bullet dies.
+
+-bricks could have a nice outline, drift, and rotation like in Diep.io (also flash red when struck. Feedback for damage dealt.
+
+-what if shove out was an upgradeable attribute? useless except as defense against rammers
+-Ship Diversity: Intermediate between machine gun and carrier is a machine gunner that fires seeker bullets.
+-Rare random event - stream of zero-damage bullets cuts map in half.
+-mine laying ship
+-Powerup where the ship gets seeker bullets for a time.
+
+-What's the overarching design? Is there any sort of rock paper scissors endgame system? Ram beats penetration shot, beats impact (shove away)? Upgrade shove away? Setup a game mode where all the maxed out ships fight each other to test?
+
+-Difficulty levels. Create some sort of simple integer system of difficulty scaling. Too easy and too hard should be easy to make, then just find the spot in between them.
+
+-Winning screen when the player has won.
+
+-enemy with 1 hp but it's immune to ships and bullets. Have to run it into a brick.
+
+Team game: healer targets allies, tank takes focus of anyone it shoots, npcs reset focus at different intervals (slower than current AI), player can tell allies to come near or target my target.
+
+-Drifting proxy mines that spawn from players
+-Mines with decent explosive radius that mimic experience bricks.
+-Asteroid that flies through the region and gives big xp bonus for killing.
+-Messing with friction of targets or of self. Reducing friction to zero and then the friction slowly recovers back to the standard level.
+-Super strike eagle-style missiles.
+-add a food item that you can harvest to reproduce. Or just spend exp to clone.
+-Temporary special abilities: shields, stunners, reduce target's frictions, that can be picked up.
+-Different level with 1500 blue bricks. Or a level that's smaller and has only 1 exp brick.
+-Upgrading impact force of bullets.
+-Different ships have different throwback when they collide. Some ships have a repulsor or attractor field around them.
+-Levels specified in text files. Read in the upgrade schedules, starting levels, frictions, numbers of which bricks, etc. Or just make it a scenario object for now. That's just as easy. I like this idea. Then your goal is to balance the levels and set it up so there is an order to the levels then you've nearly got yourself an infinite progression game. Start by making the levels easier (make it possible to kill opponents) then gradually build up difficulty.
+-Could make a League/DOTA clone with enemies on 3 lanes that march to enemy base and heroes that try to fight for their own side.
+
+-Diep.io converted to a ballistic asteroids-like game just for fun. Goal is still to level up fast. Enemies would be asymetric, perhaps drifting through non-ballistically and shooting at player.
+-Add auto-turrets that try to lead target. If you then add ability to add a turret on click, you're half way to a tower defense.
+-Then exp bricks that try to run away but are worth lots of points. Or exp bricks that follow a route through the world.
+
+-Then make a second autoturret that charges up and changes color until a burst of shots resets it.
+-Make a little flock of moving experience bricks that follows a route as a start to tower defense, but also as a fun little thing to chase.
+
+
+-Different missions and levels: defend base, destroy enemy base, escort herd of experience bricks, level up as fast as possible, asteroids-like game.
+
+
+http://diepio.wikia.com/wiki/Concept:The_Apocalypse
+This is basically making the game more into an RTS with buildable walls, autoturrets, energy domes, and NPC allies.

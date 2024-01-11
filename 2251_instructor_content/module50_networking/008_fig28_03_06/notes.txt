@@ -1,0 +1,19 @@
+
+There are two separate processes that need run. First the Server needs to be run:
+	javac ServerTest.java
+	java ServerTest
+then the client
+	javac ClientTest.java
+	java ClientTest
+I opened two different command prompts to run them.
+
+When I first ran the server I received a windows firewall warning and just gave the program permission to run on the local network.
+
+Then create a third command prompt running a client and connect to the server.
+It will not get feedback because the server is talking to the first client.
+There's a little input window where the earlier client can send a message to the server. Say "hello".
+The server has a prompt too that can be used for communication.
+
+All caps "TERMINATE" is a special phrase to indicate that a client is done. This is not generally the case, but is specified by this line of code in Server.java:
+while (!message.equals("CLIENT>>> TERMINATE"));
+As soon as TERMINATE is passed by the client, the second client starts talking to the server.

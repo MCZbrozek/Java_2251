@@ -1,0 +1,4 @@
+
+This is a no-GUI version of the book's server example, designed to distinguish the purely client-server parts from the GUI parts.
+
+I changed it further to remove unnecessary comments and generally (I hope) make it easier to read.

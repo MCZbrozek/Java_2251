@@ -1,0 +1,2 @@
+
+I took the content from \020_client_server_no_GUI\ and reduced it even further, cutting print statements, consolidating try-catches, and reducing the number of method calls in order to isolate the critical components of networking in Java.

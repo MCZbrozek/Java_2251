@@ -1,0 +1,5 @@
+
+This code has been greatly improved in terms of readability. It no longer matches the book's code.
+
+
+This example uses datagrams to create a connectionless communication example between the client and server.

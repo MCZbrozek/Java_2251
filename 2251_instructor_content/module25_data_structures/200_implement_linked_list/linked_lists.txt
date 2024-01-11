@@ -1,0 +1,7 @@
+
+Check the java book by Bailey
+
+linked lists
+    sorting
+    time complexity
+

@@ -1,0 +1,50 @@
+	STEP 1
+Move all program images to the src folder so they automatically get put in JAR files.
+Right click on src and create a new folder named images and then again for a folder named audio. A regular folder will do. Nothing special.
+Copy all images into the image folder.
+Copy all the audio into the audio folder.
+Make sure to copy all images directly into the subfolders of src. Do not copy over folders. This may mean you have to change the image file paths.
+Refresh the project.
+In ImageManager.loadImage, make the following changes
+			img = ImageIO.read(new File(image_file));
+becomes
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			InputStream input = classLoader.getResourceAsStream(image_file);
+			img = ImageIO.read(input);
+import the java.io version of ImageIO.
+
+Then change Utils.playSound from 
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(FileName).getAbsoluteFile());
+to this
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			InputStream input = classLoader.getResourceAsStream(FileName);
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(input);
+
+There are other changes that need made in ImageManager. For instance this:
+			File inputFile = new File("images/sheet.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(inputFile);
+needs to be this:
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			InputStream input = classLoader.getResourceAsStream("images/sheet.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(input);
+
+
+
+	STEP 2
+Create the executable using this tutorial:
+http://www.wikihow.com/Create-an-Executable-File-from-Eclipse
+Note that launch4j has been installed on your laptop. It is in /Program Files(x86)/Launch4j/
+
+On the step 6 Click the gear button called "Build wrapper" at the top of the screen.
+This instruction seems unclear to me. What you need to do is create an xml file. I just create the file using the same name as the game, for example, bullethell.xml.
+Then in the following step I just save over that same xml file.
+
+	STEP 3
+That should be all. The main problem I have had when the program does not run is that it is trying to load image files that aren't properly in the src/images folder. They test for this is to move project_name/images/ temporarily out of the program so it can only find the needed images in src/images and make sure that the game runs.
+
+	STEP 4
+The high scores file works straight out of the box as long as you copy it into the same folder as the executable.

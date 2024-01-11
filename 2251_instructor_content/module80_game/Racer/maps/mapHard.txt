@@ -1,0 +1,13 @@
+rect,-300,100,500,50,backstop
+rect,-300,-1200,50,1300,leftwall
+rect,150,-2000,50,2100,rightwall
+circ,-50,-400,70,obstacle 1
+circ,-200,-700,70,obstacle left
+circ,100,-700,70,obstacle right
+circ,-50,-1000,70,obstacle 2
+rect,-800,-1200,500,50,left turn left side
+rect,-500,-1500,700,50,left turn right side
+rect,-800,-2000,50,800,leftwall2
+rect,-800,-2000,1000,50,farwall
+circ,-300,-1750,70,obstacle 3
+finish,100,-1900,20

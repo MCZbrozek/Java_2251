@@ -1,0 +1,10 @@
+
+Plato and Socrates are sitting down to dinner, but there is only one knife and one fork at the table. Both utensils are needed in order to eat. Currently it's a free-for-all. Anyone can grab the knife or the fork and neither one has to let it go.
+
+Sometimes they even forget they are holding one of the utensils. The code is a mess!
+
+Your PRIMARY goal is to change the code in Philosopher.java to minimize the number of times the philosophers prevent each other from eating.
+
+Your SECONDARY goal is to change the code in Philosopher.java to minimize the total time it takes the philosophers to finish eating.
+
+Do not change the code in ANY file except Philosopher.java.

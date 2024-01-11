@@ -1,0 +1,10 @@
+
+This is a no-GUI version of the book's server example, 
+modified to demonstrate sending and receiving non-String data.
+Here I pass an integer array though other objects are possible.
+
+It might be neat to make an example where a tuple Object is sent and the first part of the tuple specifies how the second part should be cast.
+
+Object generic_obj = getObject();
+if(obj_type.equals("BankAccount")
+	BankAccount ba = (BankAccount)generic_obj;

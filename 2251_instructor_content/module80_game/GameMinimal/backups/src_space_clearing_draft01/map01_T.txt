@@ -1,0 +1,8 @@
+7 10
+x         
+x         
+x         
+xxxxxxxxxx
+x         
+x         
+x         

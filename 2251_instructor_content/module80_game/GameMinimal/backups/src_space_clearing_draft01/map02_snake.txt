@@ -1,0 +1,11 @@
+10 12
+xxxx        
+xwwxx       
+xxwwxx      
+ xxwwxx     
+  xxwwxx    
+   xxwwxx   
+    xxwwxx  
+     xxwwxx 
+      xxwwxx
+       xxxx 
