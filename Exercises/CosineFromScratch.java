@@ -1,6 +1,6 @@
 // Name: Mike Zbrozek
 // Class: 2251
-// Assignment: SimpleCalc
+// Assignment: CosineFromScratch
 // Purpose: Modify as instructed
 // FileName: "CosineFromScratch.java"
 
@@ -29,8 +29,21 @@ public class CosineFromScratch {
 
 		double correct_cos = Math.cos(x);
 
-		// START HERE: The following code goes into
-		// the method.
+		double estimate = cosine(x);
+
+		System.out.printf("%-22s %f\n", "The correct cosine is:", correct_cos);
+		System.out.printf("%-22s %f\n", "Our estimate is:", estimate);
+	}
+
+	public static int factorial(int n) {
+		int to_return = 1;
+		for (int i = 1; i <= n; i++) {
+			to_return = to_return * i;
+		}
+		return to_return;
+	}
+
+	public static double cosine(double x) {
 		// Source for the following:
 		// https://austinhenley.com/blog/cosine.html
 		double num_terms = 10;
@@ -51,17 +64,6 @@ public class CosineFromScratch {
 		if (div % 2 != 0) {
 			estimate = estimate * -1;
 		}
-		// STOP HERE
-
-		System.out.printf("%-22s %f\n", "The correct cosine is:", correct_cos);
-		System.out.printf("%-22s %f\n", "Our estimate is:", estimate);
-	}
-
-	public static int factorial(int n) {
-		int to_return = 1;
-		for (int i = 1; i <= n; i++) {
-			to_return = to_return * i;
-		}
-		return to_return;
+		return estimate;
 	}
 }
