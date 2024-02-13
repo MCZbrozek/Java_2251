@@ -1,0 +1,8 @@
+
+Rewrite the code in Circle.java and Main.java so that the Circle has a radius instance variable and 5.7 only needs to be used once in the entire program to set the value of the radius.
+
+Delete the unnecessary local variables and parameters once the instance variable is set up.
+
+You may add a constructor to Circle.java or a setter method or both.
+
+Add @Override before the toString method and make sure that the program still compiles.
