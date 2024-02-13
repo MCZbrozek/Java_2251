@@ -16,10 +16,11 @@ public class Main {
     public static void main(String[] args) {
         // Instantiate variable of type TicTacToe
         TicTacToe game = new TicTacToe();
-        // Call the printBoard method
-        // game.printBoard();
+        // Call the gameLoop method to play the game
+        game.gameLoop();
+
         // Call the run tests method
-        game.runTests();
+        // game.runTests();
     }
 
 }

@@ -13,11 +13,12 @@ TicTacToe.java
 
 */
 
-import java.lang.reflect.Method;
+// import java.lang.reflect.Method;
+import java.util.Scanner; // Import the Scanner class
 
 public class TicTacToe {
 
-    // enum cellstate
+    // enum cellState
     public enum CellState {
         X,
         O,
@@ -27,6 +28,8 @@ public class TicTacToe {
     // Instance variables
     private int col;
     private int row;
+    private boolean playAgain = true;
+    private boolean nextTurn = true;
     private CellState[][] board;
     private CellState player;
 
@@ -47,6 +50,53 @@ public class TicTacToe {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 board[i][j] = CellState.EMPTY;
+            }
+        }
+    }
+
+    // Method to read in an int from the user called in the gameLoop Method
+    public int getUserInt(String prompt) {
+        System.out.print(prompt + ": ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    } // end getUserInt
+
+    // Method to read in an String from the user called in the gameLoop Method
+    public String getUserString(String prompt) {
+        System.out.print(prompt + ": ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    } // end getUserString
+
+    // Method to control game play, consists of 2 while loops, one to start a new
+    // game, the inner loop continues the current game until an end condition is
+    // reached.
+    public void gameLoop() {
+        System.out.println("WELCOME to TIC TAC TOE!");
+        while (playAgain) {
+            TicTacToe game1 = new TicTacToe();
+            // game1.initializeBoard(board);
+            game1.printBoard();
+            game1.player = CellState.O;
+            System.out.println("Player " + getCellText(game1.player) + " It's now your turn ");
+            while (game1.nextTurn) {
+                // run scanner methods getUserInt() to get cell data
+                String promptRow = ("Please enter a row (1, 2, or 3)");
+                row = getUserInt(promptRow) - 1; // convert player index
+                String promptCol = ("Please enter a column (1, 2, or 3)");
+                col = getUserInt(promptCol) - 1;
+                game1.validMove(col, row, game1.player);
+                game1.printBoard();
+                game1.gameStatus();
+                System.out.println();
+            }
+            String promptPlayAgain = ("Do you want to play again? (y/n)");
+            String userSelection = getUserString(promptPlayAgain);
+            if (userSelection.equals("y")) {
+                playAgain = true;
+            } else {
+                System.out.println("Thank you for playing, have a great day!");
+                playAgain = false;
             }
         }
     }
@@ -81,7 +131,9 @@ public class TicTacToe {
 
     // Check to see if player's move is valid
     public boolean validMove(int col, int row, CellState player) {
-        if ((row >= 0 && row < 3) && (col >= 0 && col < 3) && (board[row][col] == CellState.EMPTY)) {
+        if ((row >= 0 && row < 3)
+                && (col >= 0 && col < 3)
+                && (board[row][col] == CellState.EMPTY)) {
             board[row][col] = player;
             return true;
         } else {
@@ -92,20 +144,19 @@ public class TicTacToe {
     }
 
     public void gameStatus() {
-        // printBoard();
-
         // check for win by calling the win method
         if (win()) {
             System.out.println("Player " + player + " Wins!!");
+            nextTurn = false;
             return;
         }
 
         if (draw()) {
             System.out.println("No winner this time, play again?");
-            // TODO Run a game reset here add scanner.
+            nextTurn = false;
             return;
         }
-
+        // System.out.println("Value of player on line 159: " + player);
         // Switch to the next player
         if (player == CellState.O) {
             player = CellState.X;
@@ -134,7 +185,9 @@ public class TicTacToe {
     // matches through the row.
     public boolean checkRows() {
         for (int i = 0; i < 3; i++) {
-            if (board[i][0] != CellState.EMPTY && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+            if (board[i][0] != CellState.EMPTY
+                    && board[i][0] == board[i][1]
+                    && board[i][1] == board[i][2]) {
                 return true;
             }
         }
@@ -145,7 +198,9 @@ public class TicTacToe {
     // matches through the col.
     public boolean checkCols() {
         for (int i = 0; i < 3; i++) {
-            if (board[0][i] != CellState.EMPTY && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+            if (board[0][i] != CellState.EMPTY
+                    && board[0][i] == board[1][i]
+                    && board[1][i] == board[2][i]) {
                 return true;
             }
         }
@@ -156,15 +211,15 @@ public class TicTacToe {
     // [2][0], makes sure first cell is not empty and that each cell state
     // matches through the row.
     private boolean checkDiag() {
-        if (board[0][0] != CellState.EMPTY &&
-                board[0][0] == board[1][1] &&
-                board[1][1] == board[2][2]) {
+        if (board[0][0] != CellState.EMPTY
+                && board[0][0] == board[1][1]
+                && board[1][1] == board[2][2]) {
             return true;
         }
 
-        if (board[0][2] != CellState.EMPTY &&
-                board[0][2] == board[1][1] &&
-                board[1][1] == board[2][0]) {
+        if (board[0][2] != CellState.EMPTY
+                && board[0][2] == board[1][1]
+                && board[1][1] == board[2][0]) {
             return true;
         }
         return false;
