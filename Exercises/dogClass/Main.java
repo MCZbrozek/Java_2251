@@ -7,7 +7,7 @@ Sources:GeeksforGeeks
 
 Files: 
 Main.Java
-Dog.java
+TicTacToe.java
 
 */
 import java.util.Scanner;
