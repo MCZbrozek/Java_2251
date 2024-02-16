@@ -1,0 +1,6 @@
+
+Add a new class that extends Vehicle. This new class can be anything you want. It could be an Airplane or Submarine or other vehicle of your choice.
+
+Write your class to have at least one attribute and method that is not shared by any of the other Vehicles.
+
+Create an instance of your new class in Main and call one of its methods, as well as the honk method that it inherits.
