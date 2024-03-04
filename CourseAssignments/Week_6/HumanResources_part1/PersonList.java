@@ -1,6 +1,19 @@
+/*
+Name: Michael Zbrozek
+Date: 3/2/2024
+Purpose: Read in hr.txt, store Persons in PersonSet(), print to console
+Sources:
+ChatGPT - See prompts in comments
+GeeksforGeeks - See links in comments
+file_io_example	
 
-/*Write an interface named PersonList. 
- */
+Files: 
+Main.Java
+Person.java
+PersonList.Java
+PersonSet.java
+
+*/
 public interface PersonList {
     // The interface should have two abstract methods:
 

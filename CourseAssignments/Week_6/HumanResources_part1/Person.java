@@ -1,5 +1,19 @@
+/*
+Name: Michael Zbrozek
+Date: 3/2/2024
+Purpose: Read in hr.txt, store Persons in PersonSet(), print to console
+Sources:
+ChatGPT - See prompts in comments
+GeeksforGeeks - See links in comments
+file_io_example	
 
-/*Write a class named Person.*/
+Files: 
+Main.Java
+Person.java
+PersonList.Java
+PersonSet.java
+
+*/
 
 public class Person {
     /* Write three attributes for storing name, height, and weight information. */
@@ -44,6 +58,30 @@ public class Person {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    /*
+     * Source ChatGPT
+     * Prompt - Show me method for a toString() method that outputs data in a table
+     * format
+     */
+    @Override
+    public String toString() {
+        String format = "| %-15s | %-6.2f | %-6.2f |%n";
+        // https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/
+        StringBuilder result = new StringBuilder();
+
+        // Header for table output
+        result.append("+-----------------+--------+--------+\n");
+        result.append("| Name            | Height | Weight |\n");
+        result.append("+-----------------+--------+--------+\n");
+        result.append(String.format(format, name, height, weight));
+
+        // Footer
+        result.append("+-----------------+--------+--------+\n");
+
+        return result.toString();
+
     }
 
     /*
