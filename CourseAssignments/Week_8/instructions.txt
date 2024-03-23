@@ -1,0 +1,42 @@
+
+Your task is to create a doubly-linked, self-sorting list that can be used in place of the ArrayList used in the Hurricane assignment.
+
+If implemented correctly, minimal changes to Main.java will be needed to your Hurricane assignment code. For my solution, in Main.java the only changes I made were:
+
+	ArrayList <HurricaneRowData> data = new ArrayList <HurricaneRowData>();
+to
+	DoublyLinkedSortedList data = new DoublyLinkedSortedList();
+
+and then I changed
+
+	int max_year = maxAceYear(data);
+	System.out.println(max_year);
+to
+	DoublyLinkedSortedList link = data.getFirst();
+	HurricaneRowData dat = link.getValue();
+	int max_year = dat.getYear();
+	System.out.println("Year of max ace: "+max_year);
+	System.out.println("All data in order of Ace:");
+	System.out.println(data);
+
+Nothing else was changed in Main.java.
+
+An interface is provided to guide your design of DoublyLinkedSortedList. Your DoublyLinkedSortedList.java class must implement the interface. You can add more methods if you wish.
+
+IMPORTANT: The data in the linked list MUST remain sorted at all times. In other words, as the data is added to the list, it must be automatically inserted in sorted order. You will not get full credit for sorting after all the data has been inserted.
+
+IMPORTANT 2: Turn in all of your hurricane code including the adjusted Main.java along with the new code. You should turn in:
+	Main.java
+	HurricaneRowData.java
+	DoublyLinkedSortedList.java
+
+Although the following is optional, you might consider adding the following methods to DoublyLinkedSortedList.java:
+
+	/* Post: Returns true if this linked list
+	* contains the given value. */
+	public boolean contains(HurricaneRowData value);
+
+	/* Pre: This linked list contains the given value.
+	 * Post: Returns the LinkedList element whose value
+	 * matches the given value. */
+	public DoublyLinkedSortedList getByValue(HurricaneRowData value);

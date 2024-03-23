@@ -1,0 +1,37 @@
+
+Extensible array objects - self extending
+
+http://dept.cs.williams.edu/~bailey/JavaStructures/Book_files/JavaStructures.pdf
+
+http://www.tutorialspoint.com/java/java_vector_class.htm
+
+http://cs.bluecc.edu/java/CS260/Notes/Vectors.htm
+
+http://www.java2s.com/Code/Java/Collections-Data-Structure/Vector.htm
+
+
+
+=================== LECTURE
+
+Overloading:
+"Java can distinguish between methods with different method signatures. This means that methods within a class can have the same name if they have different parameter lists"
+https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html
+
+Pre and post conditions.
+
+Abstraction
+	-Interfaces
+
+=================== ASSIGNMENT
+
+A Vector is a self-extending array. It grows larger as needed.
+
+You have been given the shell of a Vector class. You need to implement the functions that have "//TODO" in them.
+
+Upload the Vector.java file that contains your implemented Vector. You will be graded on your Vector succeeding at the tests in Main.java and also a reading of the code to verify that your Vector correctly expands as objects are added to it.
+
+=================== GRADING RUBRIC
+
+Pass the tests in Main.java.
+
+Correctly grow your Vector as objects are added to it.
