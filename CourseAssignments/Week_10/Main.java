@@ -1,6 +1,6 @@
 /*
 Name: Michael Zbrozek
-Date: 3/21/2024
+Date: 3/28/2024
 Purpose: Read in matrixes, split them into 2 matrixes and further subdivide them into quadrants that will be added together by 4 threads and output as a separate matrix print to console.
 Sources:
 ChatGPT - See prompts in comments
@@ -56,6 +56,10 @@ public class Main {
 		// instantiate scanner
 		Scanner fileReader = null;
 
+		// rows and cols
+		int rows = 0;
+		int cols = 0;
+
 		// Empty 2d array objects to be passed to threadOperations
 		int[][] firstHalf = null;
 		int[][] secondHalf = null;
@@ -74,8 +78,8 @@ public class Main {
 
 			// Read in first line from file, and set vars to create array
 			// Initialize 2d array with row and column length
-			int rows = fileReader.nextInt();
-			int cols = fileReader.nextInt();
+			rows = fileReader.nextInt();
+			cols = fileReader.nextInt();
 			System.out.println("col =" + cols);
 			System.out.println("row =" + rows);
 
@@ -97,17 +101,18 @@ public class Main {
 		}
 		fileReader.close();
 
+		int[][] matrixResult = new int[rows][cols];
+
 		// instantiate four ThreadOperation objects
-		ThreadOperations thread2 = new ThreadOperations(firstHalf, secondHalf, 1);
+		ThreadOperations thread1 = new ThreadOperations(firstHalf, secondHalf, matrixResult, 1);
 
-		ThreadOperations thread3 = new ThreadOperations(firstHalf, secondHalf, 2);
+		ThreadOperations thread2 = new ThreadOperations(firstHalf, secondHalf, matrixResult, 2);
 
-		ThreadOperations thread4 = new ThreadOperations(firstHalf, secondHalf, 3);
+		ThreadOperations thread3 = new ThreadOperations(firstHalf, secondHalf, matrixResult, 3);
 
-		ThreadOperations thread1 = new ThreadOperations(firstHalf, secondHalf, 4);
+		ThreadOperations thread4 = new ThreadOperations(firstHalf, secondHalf, matrixResult, 4);
 
 		// start them
-		long start_time = System.nanoTime();
 		thread1.start();
 		thread2.start();
 		thread3.start();
@@ -131,14 +136,15 @@ public class Main {
 
 		// Instantiate a test 2d array with any values you like in main and use it to
 		// verify that print2dArray works.
-		int[][] test2d = {
-				{ 0, 1, 2, 3, 3, 4, 6, 7 },
-				{ 1, 1, 2, 3, 3, 4, 6, 7 },
-				{ 2, 2, 3, 3, 3, 4, 6, 7 },
-				{ 3, 4, 4, 1, 3, 4, 6, 7 } };
-		System.out.println("\nThe test array looks like - \n");
-		print2dArray(test2d);
-		System.out.println("\n\n");
+		// int[][] test2d = {
+		// { 0, 1, 2, 3, 3, 4, 6, 7 },
+		// { 1, 1, 2, 3, 3, 4, 6, 7 },
+		// { 2, 2, 3, 3, 3, 4, 6, 7 },
+		// { 3, 4, 4, 1, 3, 4, 6, 7 } };
+		// System.out.println("\nThe test array looks like - \n");
+		System.out.println("\nThe resulting array looks like -");
+		print2dArray(matrixResult);
+		// System.out.println("\n\n");
 
 	}
 
